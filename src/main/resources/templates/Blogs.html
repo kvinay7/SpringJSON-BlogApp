@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List of Blogs</title>
+</head>
+<body>
+
+    <h1>List of Blogs</h1>
+    <hr/>
+
+    <div th:each="blog : ${blogs}">
+        <div>
+            <h4> Post Id:<span th:text="${blog.id}"></span></h4>
+            <h3 th:text="${blog.title}"></h3>
+            <p th:text="${blog.body}"></p>
+            <a th:href="@{/comments/{postId}(postId=${blog.id})}">View</a>
+            <h3> By <a th:href="@{/user/{id}(id=${blog.userId})}">User <span th:text="${blog.userId}"></span></a></h3>
+        </div>
+        <hr/>
+    </div>
+
+</body>
+</html>

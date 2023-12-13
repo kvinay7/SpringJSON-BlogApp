@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments</title>
+</head>
+<body>
+<h2>Comments for Post ID: <span th:text="${postId}"></span></h2>
+<hr/>
+    <div th:each="comment : ${comments}">
+        <div>
+            <p th:text="${comment.body}"></p>
+            <h4 th:text="${comment.email}"></h4>
+        </div>
+        <hr/>
+    </div>
+</body>
+</html>

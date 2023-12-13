@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Details</title>
+</head>
+<body>
+<h1>User Details</h1>
+<dl>
+  <dt>ID:</dt>
+  <dd th:text="${user.id}"></dd>
+
+  <dt>Name:</dt>
+  <dd th:text="${user.name}"></dd>
+
+  <dt>Username:</dt>
+  <dd th:text="${user.username}"></dd>
+
+  <dt>Email:</dt>
+  <dd th:text="${user.email}"></dd>
+
+  <dt>Address:</dt>
+  <dd th:text="${'Street: ' + user.address.street + ', Suite: ' + user.address.suite + ', City: ' + user.address.city + ', Zipcode: ' + user.address.zipcode}"></dd>
+  <dd th:text="${'Geo: Lat ' + user.address.geo.lat + ', Lng ' + user.address.geo.lng}"></dd>
+
+  <dt>Phone:</dt>
+  <dd th:text="${user.phone}"></dd>
+
+  <dt>Website:</dt>
+  <dd th:text="${user.website}"></dd>
+
+  <dt>Company:</dt>
+  <dd th:text="${'Name: ' + user.company.name + ', Catch Phrase: ' + user.company.catchPhrase + ', BS: ' + user.company.bs}"></dd>
+</dl>
+<h3><a th:href="@{'/user/' + ${user.id} + '/posts'}">Posts</a></h3>
+<h3><a th:href="@{'/user/' + ${user.id} + '/comments'}">Comments</a></h3>
+</body>
+</html>

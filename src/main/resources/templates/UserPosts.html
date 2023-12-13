@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Posts</title>
+</head>
+<body>
+<h2>User <span th:text="${userId}"></span> Posts</h2>
+<hr/>
+<ul th:each="post : ${userPosts}">
+    <li th:text="${post.title}"></li>
+    <a th:href="@{/comments/{postId}(postId=${post.id})}">View</a> <hr/>
+</ul>
+</body>
+</html>
+
